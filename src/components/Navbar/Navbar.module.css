@@ -1,0 +1,86 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 2rem;
+  transition: all 0.35s ease;
+  width: 100%;
+}
+
+.scrolled {
+  background: rgba(0, 0, 26, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.85rem 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 1px 0 var(--border);
+}
+
+.inner {
+  width: auto;
+  margin: 0 2rem ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoText {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.logoWhite { color: #fff; }
+.logoGold  { color: var(--primary); }
+
+.menu {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.menuItem {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  position: relative;
+  transition: color 0.25s;
+}
+
+.menuItem::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1.5px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+
+.menuItem:hover {
+  color: var(--primary);
+}
+
+.menuItem:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .menu { display: none; }
+}

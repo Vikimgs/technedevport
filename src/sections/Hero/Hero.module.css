@@ -1,0 +1,164 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 2rem 4rem;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(179,131,5,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 10% 80%, rgba(120,70,0,.08) 0%, transparent 50%);
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(179,131,5,.5), transparent);
+  animation: pulse var(--dur, 4s) ease-in-out infinite var(--del, 0s);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.left {
+  flex: 1;
+  min-width: 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(179,131,5,.3);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.gold {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Right / Logo ── */
+.right {
+  flex: 0 0 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 380px;
+  height: 380px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(179,131,5,.18) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.ring {
+  position: absolute;
+  inset: -20px;
+  border: 1px solid rgba(179,131,5,.12);
+  border-radius: 50%;
+}
+
+.ring2 {
+  position: absolute;
+  inset: -50px;
+  border: 1px solid rgba(179,131,5,.07);
+  border-radius: 50%;
+}
+
+.orbitDot {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin: -4px 0 0 -4px;
+  animation: orbit var(--dur, 8s) linear infinite;
+  box-shadow: 0 0 10px rgba(179,131,5,.6);
+}
+
+.orbitDotSm {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin: -2.5px 0 0 -2.5px;
+  opacity: 0.6;
+  animation: orbit var(--dur, 9s) linear infinite var(--del, 0s);
+}
+
+.logoSvg {
+  width: 280px;
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(179,131,5,.25));
+}
+
+@media (max-width: 1024px) {
+  .container  { flex-direction: column; text-align: center; }
+  .right      { display: none; }
+  .desc       { max-width: 100%; }
+  .btnGroup   { justify-content: center; }
+}
